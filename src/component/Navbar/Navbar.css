@@ -1,0 +1,266 @@
+/* Main navbar */
+.navbar {
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 27px;
+    font-weight: 800;
+
+    color: #7c3aed;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.logo span {
+    font-size: 25px;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+    display: flex;
+    align-items: center;
+
+    width: 320px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: #7c3aed;
+
+    box-shadow:
+        0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.search-box input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 12px 18px;
+
+    font-size: 14px;
+
+    color: #374151;
+}
+
+.search-box button {
+    border: none;
+
+    background: transparent;
+
+    padding: 10px 15px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.search-box button:hover {
+    transform: scale(1.2);
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #374151;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 8px 0;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #7c3aed;
+}
+
+
+/* Animated underline */
+
+.nav-links li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   SIGNUP BUTTON
+========================= */
+
+.nav-links .signup-btn {
+    padding: 11px 20px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 6px 15px rgba(124, 58, 237, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+
+/* Remove underline */
+
+.nav-links .signup-btn::after {
+    display: none;
+}
+
+
+/* Signup hover */
+
+.nav-links .signup-btn:hover {
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(124, 58, 237, 0.35);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    .search-box {
+        width: 220px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 20px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .search-box {
+        order: 3;
+
+        width: 100%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
